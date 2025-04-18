@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pre-roll Ad Test</title>
+  <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    #game-container {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Pre-roll Ad Before Game</h2>
+
+  <!-- Video.js player -->
+  <video id="ad-player" class="video-js vjs-default-skin" width="640" height="360" controls muted autoplay preload="auto"></video>
+
+  <!-- Game area -->
+  <div id="game-container">
+    <h3>🎮 Your Game Loads Here</h3>
+    <iframe src="https://main.dd8vt524eqsk2.amplifyapp.com/projects/boxing-random/index.html" width="640" height="480" frameborder="0"></iframe>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+  <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.9.0/dist/videojs-contrib-ads.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/videojs-ima@1.9.0/dist/videojs.ima.min.js"></script>
+
+  <script>
+    const player = videojs('ad-player');
+
+    player.ima({
+      id: 'ad-player',
+      adTagUrl: 'https://storage.googleapis.com/gvabox/media/samples/ads/vast/vast-sample.xml'
+    });
+
+    player.ready(() => {
+      player.muted(true); // required for autoplay
+      player.ima.requestAds();
+
+      player.on('adsready', () => {
+        player.play();
+      });
+
+      // Show game after ad
+      player.on('adend', () => {
+        loadGame();
+      });
+
+      // Also handle errors gracefully
+      player.on('adserror', () => {
+        console.warn("Ad failed, loading game.");
+        loadGame();
+      });
+    });
+
+    function loadGame() {
+      document.getElementById('ad-player').style.display = 'none';
+      document.getElementById('game-container').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
