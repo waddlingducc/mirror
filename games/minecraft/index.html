@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2366308143645027" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minecraft Unblocked Games NebulaPlay</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
     <style>
         html, body {
             margin: 0;
@@ -20,63 +16,52 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url(https://i.ibb.co/4ZMGnKmk/rgtrg455555.png);
+            background-image: url(https://i.ibb.co/4ZMGnKmk/rgtrg455555.png); /* Background for the page */
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: fixed;
+            bottom: 20px; /* Adjust distance from bottom */
+            left: 20px; /* Adjust distance from left */
+            z-index: 10;
+        }
+
+        .logo img {
+            width: 50px; /* Adjust logo size */
+            height: auto;
+        }
+
+        /* Game container for iframe */
+        .game-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="https://nebulaplay.site">
-            <img src="https://i.ibb.co/RTKMMcY7/irytyui.png" alt="logo">
-        </a>
-        <h3>NebulaPlay</h3>
-    </nav>
 
-    <div class="container">
-        <!-- Left Vertical Ad -->
-        <div class="ad-banner">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2366308143645027"
-                 data-ad-slot="9891545305"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+    
 
-        <!-- Right Vertical Ad -->
-        <div class="ad-banner">
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2366308143645027"
-                 data-ad-slot="9891545305"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
-        <h2>Copy And Paste This Link To Open The Game</h2>
-        <h2>https://nebulaplay.hs.vc/minecraft/</h2>
-    <!-- Bottom Horizontal Ad -->
-    <div class="bottom-ad">
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2366308143645027" crossorigin="anonymous"></script>
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px"
-             data-ad-client="ca-pub-2366308143645027"
-             data-ad-slot="5691649682"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+    <!-- Fullscreen iframe for the game -->
+    <div class="game-container">
+        <iframe src="https://eaglercraft.com/mc/1.12.2/">
+            <p>Your browser does not support iframes.</p>
+        </iframe>
     </div>
 
-   
-    </script>
 </body>
 </html>
